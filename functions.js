@@ -44,11 +44,15 @@ function createSlug3(title){
     }
 }
 
+function findPostById(arr,id){
+    return arr.find(post => post.id === id)
+}
 module.exports = {
     getInitials,
     createSlug,
     average,
     createSlug2,
     isPalindrome,
-    createSlug3
+    createSlug3,
+    findPostById
 }

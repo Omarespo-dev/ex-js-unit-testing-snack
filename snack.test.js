@@ -1,4 +1,4 @@
-const { getInitials, createSlug, average , createSlug2 , isPalindrome,createSlug3} = require("./functions")
+const { getInitials, createSlug, average , createSlug2 , isPalindrome,createSlug3, findPostById} = require("./functions")
 
 //snack1
 test('La funzione getInitials restituisce le iniziali di un nome completo.', () => {
@@ -54,3 +54,28 @@ test('La funzione createSlug lancia un errore se il titolo è vuoto o non valido
     expect(() => createSlug3("")).toThrow()
     expect(() => createSlug3(null)).toThrow()
 })
+
+
+//🏆 Snack 7
+// Crea un array di oggetti posts, in cui ogni oggetto ha le proprietà id, title e slug.
+const posts = [
+    { id: 1, title: "Primo post", slug: "primo-post" },
+    { id: 2, title: "Secondo post", slug: "secondo-post" },
+    { id: 3, title: "Terzo post", slug: "terzo-post" }
+];
+
+// Creare un test che verifichi le seguenti descrizioni:
+// 👉 "La funzione findPostById restituisce il post corretto dato l’array di post e l’id"
+test('La funzione findPostById restituisce il post corretto dato l’array di post e l’id', () => {
+    expect(findPostById(posts,2)).toEqual({ id: 2, title: "Secondo post", slug: "secondo-post" })
+ })
+
+test('Ogni post ha le proprietà id, title e slug', () => {
+    posts.forEach(post => {
+        expect(post).toHaveProperty('id');
+        expect(post).toHaveProperty('title');
+        expect(post).toHaveProperty('slug');
+    });
+});
+
+// Creare uno o più test aggiuntivi che controllino che la struttura dati passati sia conforme (ogni post ha le proprietà id, title e slug, viene passato un id numerico).
