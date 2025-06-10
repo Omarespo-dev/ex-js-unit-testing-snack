@@ -17,9 +17,38 @@ function average(arr){
     return media
 }
 
+function createSlug2(string){
+    return string.replaceAll(" " ,"-").toLowerCase()
+}
+
+
+function isPalindrome(str){
+    const splitStringReversedJoin = str.split("").reverse().join('')
+
+    if (str.toLowerCase() === splitStringReversedJoin.toLowerCase()) {
+        return true
+    }else{
+        return false
+        
+    }
+
+}
+
+
+function createSlug3(title){
+   
+    if(title === ""){
+        throw new Error("Il titolo e vuoto");
+    }else if (!title){
+        throw new Error("Il titolo non e valido");
+    }
+}
 
 module.exports = {
     getInitials,
     createSlug,
-    average
+    average,
+    createSlug2,
+    isPalindrome,
+    createSlug3
 }
