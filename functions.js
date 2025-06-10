@@ -34,7 +34,6 @@ function isPalindrome(str){
 
 }
 
-
 function createSlug3(title){
    
     if(title === ""){
@@ -47,6 +46,8 @@ function createSlug3(title){
 function findPostById(arr,id){
     return arr.find(post => post.id === id)
 }
+
+
 module.exports = {
     getInitials,
     createSlug,
